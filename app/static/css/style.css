@@ -1,0 +1,17 @@
+.container {
+    width: 800px;
+    padding: 0;
+}
+
+.outcome_name {
+    width: 800px;
+    height: 550px;
+    background-repeat: no-repeat;
+    background-size: 800px 550px;
+}
+
+.outcome_task {
+    width: 420px;
+    height: 60px;
+    position: absolute;
+}
