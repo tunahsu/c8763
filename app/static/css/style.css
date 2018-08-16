@@ -1,17 +1,32 @@
 .container {
-    width: 800px;
+    width: 900px;
     padding: 0;
+    margin-top: 100px;
 }
 
 .outcome_name {
-    width: 800px;
+    width: 900px;
     height: 550px;
+    position: absolute;
     background-repeat: no-repeat;
-    background-size: 800px 550px;
+    background-size: 900px 550px;
 }
 
 .outcome_task {
     width: 420px;
     height: 60px;
     position: absolute;
+    left: 220px;
+}
+
+#Previous {
+    position: absolute;
+    top: 225px;
+    left: -100px;
+}
+
+#Next {
+    position: absolute;
+    top: 225px;
+    right: -75px;
 }

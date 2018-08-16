@@ -14,13 +14,13 @@
 <body>
     <div class="container">
         <div class="outcome_name">
-            <img class="outcome_task" style="top: 98px;">
-            <img class="outcome_task" style="top: 210px;">
-            <img class="outcome_task" style="top: 323px;">
+            <img class="outcome_task" style="top: 87px;">
+            <img class="outcome_task" style="top: 231px;">
+            <img class="outcome_task" style="top: 377px;">
             <img style="display: none;">
+            <button type="button" class="btn btn-outline-secondary" id="Previous">Previous</button>
+            <button type="button" class="btn btn-outline-secondary" id="Next">Next</button>
         </div>
-        <button type="button" class="btn btn-light float-left" id="Previous">Previous</button>
-        <button type="button" class="btn btn-light float-right" id="Next">Next</button>
     </div>
     <div id="names" style="display: none">{{ names }}</div>
     <div id="tasks" style="display: none">{{ tasks }}</div>
@@ -54,6 +54,7 @@
             $(".outcome_name").fadeIn();
             $("#Next").show();
             $(".outcome_task").show();
+            $(".outcome_name").css("background-image", "url('../static/img/outcome/name/" + names[name_num] + "')")
             $(".outcome_task").eq(0).attr("src", "../static/img/outcome/task/" + tasks[task_num])
             $(".outcome_task").eq(1).attr("src", "../static/img/outcome/task/" + tasks[task_num + 1])
             $(".outcome_task").eq(2).attr("src", "../static/img/outcome/task/" + tasks[task_num + 2])
@@ -66,6 +67,7 @@
             $(".outcome_name").hide();
             $(".outcome_name").fadeIn();
             $("#Previous").show();
+            $(".outcome_name").css("background-image", "url('../static/img/outcome/name/" + names[name_num] + "')")
             $(".outcome_task").eq(0).attr("src", "../static/img/outcome/task/" + tasks[task_num])
             $(".outcome_task").eq(1).attr("src", "../static/img/outcome/task/" + tasks[task_num + 1])
             $(".outcome_task").eq(2).attr("src", "../static/img/outcome/task/" + tasks[task_num + 2])
