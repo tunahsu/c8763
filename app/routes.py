@@ -5,7 +5,8 @@ from app import app
 @app.route('/')
 @app.route('/index')
 def index():
-    names = sorted(os.listdir('C:/Users/tunah/Desktop/c8763/app/static/img/outcome/name/'))
-    tasks = sorted(os.listdir('C:/Users/tunah/Desktop/c8763/app/static/img/outcome/task/'))
+    print(os.getcwd())
+    names = sorted(os.listdir(os.getcwd() + r'\app\static\img\name'))
+    tasks = sorted(os.listdir(os.getcwd() + r'\app\static\img\task'))
     
     return render_template('show.html', names=names, tasks=tasks)
