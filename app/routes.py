@@ -40,23 +40,16 @@ def upload():
 
     # Target folder for these uploads.
     if form.get("imgtype", None) == "name":
-        target = "app/static/img/name/{}".format(upload_key)
+        target = "app/static/img/name"
     elif form.get("imgtype", None) == "task":
-        target = "app/static/img/task/{}".format(upload_key)
-    try:
-        os.mkdir(target)
-    except:
-        if is_ajax:
-            return ajax_response(False, "Couldn't create upload directory: {}".format(target))
-        else:
-            return "Couldn't create upload directory: {}".format(target)
+        target = "app/static/img/task"
 
     print("=== Form Data ===")
     for key, value in list(form.items()):
         print(key, "=>", value)
 
     for upload in request.files.getlist("file"):
-        filename = upload.filename.rsplit("/")[0]
+        filename = upload.filename.rsplit("/")[0].replace("Screenshot_", "")
         destination = "/".join([target, filename])
         print("Accept incoming file:", filename)
         print("Save it to:", destination)
